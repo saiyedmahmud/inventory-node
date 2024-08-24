@@ -1,0 +1,15 @@
+npm init -y
+
+npm install node
+npm install express
+npm install morgan
+
+npm prisma init
+npm install @prisma/client prisma
+npm install mysql2
+
+npx prisma migrate dev --name init
+
+DATABASE_URL="mysql://username:password@localhost:3306/database_name"
+
+create server.js
