@@ -52,5 +52,22 @@ model purchaseInvoiceProduct {
   product         product        @relation(fields: [productId], references: [id])
 }
 
+model language {
+  id Int @id @default(autoincrement())
+  name String
+  translations translationTable[]
+  status Boolean @default(true)
+}
+
+
+model translationTable {
+  id Int @id @default(autoincrement())
+  languageId Int
+  language language @relation(fields: [languageId], references: [id])
+  key String
+  value String
+  status Boolean @default(true)
+}
+
 
 
